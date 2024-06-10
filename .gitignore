@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyc.*
+*.sqlite3
+
+# If you are using SQLite database files
+*.db
+*.sqlite3
+
+# Media
+media/
+
+# Static
+staticfiles/
+
+# Django migrations
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# Virtual environments
+venv/

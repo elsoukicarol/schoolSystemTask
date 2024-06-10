@@ -1,0 +1,89 @@
+1- Install django running
+$ pipenv install django
+
+2- Create a new django project
+
+This command is used to create a new project in a new repository
+$ python3 m- django startproject projectName
+The -m stands for project
+or
+$ django-admin startproject projectName
+
+This command is used to create a new project in an existing repository
+$ django-admin startproject projectName .
+
+3 - After creating the core of our application we need to create the apps inside out application
+These are other django applications that forn part of the same project
+
+NOTE: after creating the main application we are gonna start using manage.py instead of django-admin
+because the manage.py will include the settings of this main application
+Example:
+$ python3 manage.py runserver
+To create a new app for the project
+$ python3 manage.py startapp appName
+
+4 - We start defining the models of our new app in the file models.py
+
+5 - Install django rest framework, so we can start creating our APIs
+Run the following command:
+$ pipenv install djangorestframework
+
+6 - After having the models we create the serializers for each table in the model
+Create a serializers.py file inside the project app
+The serializer is used to send and receive JSON data
+The serializer converts the instance of the python object and returns it into a format we can work with (JSON)
+
+7 - Create the views for the models
+The views are the functions that take a web request and send back a web response
+This response can be the HTML contents of a web page, or a redirect, or a 404 error,
+or an XML document, or anything
+The viewSet is like the controller
+
+8 - After creating the views we link them to the URL, this is like linking the controller to the route
+The URL allows us tho access the view
+
+9 - we run the below commands to generate the databases and the migrations
+$ python manage.py makemigrations
+$ python manage.py migrate
+
+10 - Run server and test in postman
+
+PART II: Adding filters to the API
+
+1 - Install the filter package using:
+$ pipenv install django-filter
+
+2 - modify the settings.py from the main project by adding the new dependencies
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ]
+}
+
+INSTALLED_APPS = [
+    ...
+    'django_filters',
+]
+
+
+3 - Create a file called filters.py and add your filters
+
+4 - Add the filters to the viewSet (controller)
+
+5 - Test
+
+PART III: Implement tests using pytests framework
+
+1 - Install the filter package using:
+$ pipenv install pytest pytest-django
+
+2- Rename the file tests.py to test_anythigelse, because when running pytest it checks
+for files named anything_test or test_anything
+
+3 - create the pytest.ini file
+
+4 - add all your tests in the test_* file
+
+5 - run by writing pytest
+
